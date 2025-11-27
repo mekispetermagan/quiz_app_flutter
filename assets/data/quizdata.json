@@ -694,5 +694,188 @@
     "q": "What is the water cycle?",
     "a": "Water evaporating, forming clouds and falling again as rain",
     "o": ["Only rivers flowing into the sea", "Only ice melting on mountains", "Waves moving on the ocean surface"]
+  },
+
+
+  {
+    "t": "World Cuisine",
+    "q": "Rotten shark is a delicacy in this country:",
+    "a": "Iceland",
+    "o": ["Egypt", "Mexico", "Pakistan"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Which of these is a staple dish of India?",
+    "a": "Palak paneer",
+    "o": ["Pineapple pizza", "Pad thai", "Chicken tacos"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "What is the main ingredient of falafel?",
+    "a": "Chickpeas",
+    "o": ["Beef", "Mushroom", "Sweet potato"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Sushi comes from which country?",
+    "a": "Japan",
+    "o": ["China", "Italy", "Brazil"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Paella is a famous rice dish from:",
+    "a": "Spain",
+    "o": ["Kenya", "India", "Sweden"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Tacos originally come from:",
+    "a": "Mexico",
+    "o": ["Russia", "Egypt", "Canada"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Pizza Margherita is a classic dish from:",
+    "a": "Italy",
+    "o": ["Nigeria", "Japan", "Peru"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Guacamole is mainly made from which fruit?",
+    "a": "Avocado",
+    "o": ["Banana", "Mango", "Orange"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Which country is famous for serving snails called \"escargots\"?",
+    "a": "France",
+    "o": ["China", "United States", "South Africa"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Which of these is a long, thin type of Italian pasta?",
+    "a": "Spaghetti",
+    "o": ["Naan", "Couscous", "Ugali"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Fish and chips is a traditional meal in:",
+    "a": "The United Kingdom",
+    "o": ["Thailand", "Brazil", "Algeria"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Hummus is mainly made from:",
+    "a": "Chickpeas",
+    "o": ["Potatoes", "Beef", "Eggs"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Naan is a type of:",
+    "a": "Flatbread",
+    "o": ["Soup", "Ice cream", "Grilled fish"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Dim sum is a style of small dishes from which country?",
+    "a": "China",
+    "o": ["Italy", "Mexico", "Norway"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Kimchi is a spicy fermented cabbage dish from:",
+    "a": "South Korea",
+    "o": ["Ethiopia", "Canada", "Portugal"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Which grain is the main ingredient in sushi and many East Asian dishes?",
+    "a": "Rice",
+    "o": ["Maize", "Barley", "Oats"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Ugali, sadza and nshima are firm porridges mainly made from:",
+    "a": "Maize flour",
+    "o": ["Rice flour", "Wheat flour", "Cassava leaves"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Injera, the spongy flatbread from Ethiopia, is traditionally made from:",
+    "a": "Teff",
+    "o": ["Rye", "Corn", "Rice"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Ceviche, made from raw fish marinated in citrus juice, is a popular dish in:",
+    "a": "Peru",
+    "o": ["Germany", "Kenya", "Japan"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Miso soup is made using a paste from fermented:",
+    "a": "Soybeans",
+    "o": ["Apple juice", "Wheat flour", "Fish bones"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Gelato in Italy is a kind of:",
+    "a": "Ice cream",
+    "o": ["Bread", "Salad", "Hot sauce"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Ravioli is best described as:",
+    "a": "Pasta filled with cheese or meat",
+    "o": ["A cold fruit soup", "A flatbread with holes", "Deep-fried plantain"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Which of these is a popular American fast food?",
+    "a": "Hamburger",
+    "o": ["Sushi roll", "Kimchi", "Injera"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Pastel de nata, a small egg custard tart, is a traditional pastry from:",
+    "a": "Portugal",
+    "o": ["Uganda", "India", "Switzerland"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Big outdoor barbecues called \"asado\" are especially famous in:",
+    "a": "Argentina",
+    "o": ["Russia", "Egypt", "Australia"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Baklava, a sweet pastry with layers of nuts and syrup, is common in:",
+    "a": "Turkey",
+    "o": ["Finland", "Canada", "South Sudan"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Samosas are especially common as a snack in:",
+    "a": "India",
+    "o": ["Sweden", "Brazil", "Egypt"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Which drink is made from roasted beans and is often served hot at breakfast?",
+    "a": "Coffee",
+    "o": ["Orange juice", "Milkshake", "Mineral water"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Which of these is a salty brown liquid often used as a dip for sushi or noodles?",
+    "a": "Soy sauce",
+    "o": ["Ketchup", "Honey", "Mustard"]
+  },
+  {
+    "t": "World Cuisine",
+    "q": "Which of these is a common street food in East Africa, including Uganda and Kenya?",
+    "a": "Chapati",
+    "o": ["Sushi", "Hot dog", "Pancakes with maple syrup"]
   }
 ]
+

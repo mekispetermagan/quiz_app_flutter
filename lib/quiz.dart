@@ -73,7 +73,7 @@ class ShuffledQuestion {
 
 }
 
-enum ProgressLogStatus {unSolved, correct, wrong}
+enum ProgressStatus {unSolved, correct, wrong}
 
 
 // A quiz guess is an int, the index of the guessed option
@@ -98,11 +98,12 @@ class Incorrect extends GuessResult {
 // It is UI agnostic.
 class QuizManager {
   final List<StoredQuestion> _quizData;
-  late int _quizLength;
   late List<StoredQuestion> _sessionData;
-  late int _i;
+  late int _quizLength;
+  late String? _topic;
   late int _score;
-  String? _topic;
+  late int _i;
+  late List<ProgressStatus> _progressLog;
   ShuffledQuestion? _currentQuestion;
 
 
@@ -117,11 +118,13 @@ class QuizManager {
     }
 
   int get score => _score;
+  int get currentIndex => _i;
   bool get isOn => _i < _quizLength;
   ShuffledQuestion? get currentQuestion => _currentQuestion;
   Set<String> get allTopics => {for (final q in _quizData) q.topic};
   String? get topic => _topic;
   int? get length => _quizLength;
+  List<ProgressStatus> get progressLog => _progressLog;
 
   void resetWith({
     String? topic,
@@ -136,6 +139,11 @@ class QuizManager {
       : _sessionData.length;
     _i = 0;
     _score = 0;
+    _progressLog = List<ProgressStatus>.generate(
+      _quizLength,
+      (_) => ProgressStatus.unSolved,
+      growable: false,
+    );
   }
 
   void _validate(List<StoredQuestion> quizData) {
@@ -159,9 +167,14 @@ class QuizManager {
     if (cq == null) throw StateError('No current question');
     assert(0 <= guess && guess < cq.options.length);
     final k = cq.correctIndex;
-    _next();
     final bool ok = guess == k;
-    if (ok) _score++;
+    if (ok) {
+      _score++;
+      _progressLog[_i] = ProgressStatus.correct;
+    } else {
+      _progressLog[_i] = ProgressStatus.wrong;
+    }
+    _next();
     return ok ? const Correct() : Incorrect(k);
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'quiz.dart';
 
+enum BarEdge {left, none, right}
+
 class QuestionText extends StatelessWidget {
   final String questionText;
   const QuestionText({required this.questionText, super.key});
@@ -125,8 +127,8 @@ class PrimaryActionButton extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
+            fontSize: 24,
+            // fontWeight: FontWeight.bold,
           ),
         ),
       ),
@@ -135,15 +137,81 @@ class PrimaryActionButton extends StatelessWidget {
 }
 
 class ProgressBarSegment extends StatelessWidget {
-  final ProgressLogStatus status;
+  final ProgressStatus status;
+  final bool isCurrent;
+  final bool isFifth;
+  final BarEdge whichEdge;
   const ProgressBarSegment({
     required this.status,
+    required this.isCurrent,
+    required this.isFifth,
+    required this.whichEdge,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    ColorScheme cs = Theme.of(context).colorScheme;
+    return Expanded(
+      child: Padding(
+        padding: isFifth
+          ? EdgeInsets.fromLTRB(3, 1, 1, 1)
+          : EdgeInsets.all(1.0),
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 200),
+          height: isCurrent ? 18 : 15,
+          decoration: BoxDecoration(
+            color: switch(status) {
+              ProgressStatus.unSolved => cs.surface,
+              ProgressStatus.correct => cs.primaryContainer,
+              ProgressStatus.wrong => cs.errorContainer
+            },
+            border: Border.all(
+              color: cs.outlineVariant,
+              width: 1,
+            ),
+            borderRadius: switch (whichEdge) {
+              BarEdge.left  => BorderRadius.horizontal(left: Radius.circular(9999)),
+              BarEdge.right => BorderRadius.horizontal(right: Radius.circular(9999)),
+              BarEdge.none  => BorderRadius.zero,
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ProgressBar extends StatelessWidget {
+  final List<ProgressStatus> progressLog;
+  final int current;
+  const ProgressBar({
+    required this.progressLog,
+    required this.current,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final maxIndex = progressLog.length - 1;
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: Row(
+        children: <Widget>[
+          for (int i=0; i<=maxIndex; i++)
+          ProgressBarSegment(
+            status: progressLog[i],
+            isCurrent: i == current,
+            isFifth: 0 < i && i % 5 == 0,
+            whichEdge: i== 0
+              ? BarEdge.left
+              : i == maxIndex
+                ? BarEdge.right
+                : BarEdge.none,
+          )
+        ],
+      ),
+    );
+
   }
 }

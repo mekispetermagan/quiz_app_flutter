@@ -148,6 +148,8 @@ class _HomePageState extends State<HomePage> {
         resultData: null,
         onButtonPress: _onSubmit,
         score: _quizManager.score,
+        progressLog: _quizManager.progressLog,
+        current: _quizManager.currentIndex,
       ),
       QuizStatus.checking => GameScreen(
         title: "${_quizManager.topic ??""} Quiz",
@@ -155,6 +157,8 @@ class _HomePageState extends State<HomePage> {
         resultData: null,
         onButtonPress: null,
         score: _quizManager.score,
+        progressLog: _quizManager.progressLog,
+        current: _quizManager.currentIndex,
       ),
       QuizStatus.showingResult => GameScreen(
         title: "${_quizManager.topic ??""} Quiz",
@@ -162,9 +166,12 @@ class _HomePageState extends State<HomePage> {
         resultData: (correct: _correctIndex!, selected: _selectedIndex!),
         onButtonPress: null,
         score: _quizManager.score,
+        progressLog: _quizManager.progressLog,
+        current: _quizManager.currentIndex,
       ),
       QuizStatus.ended => EndScreen(
         score: _quizManager.score,
+        maxScore: _quizManager.length!,
         onReset: _onStart,
       )
     };

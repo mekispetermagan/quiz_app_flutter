@@ -76,12 +76,16 @@ class GameScreen extends StatelessWidget {
   final ResultData? resultData;
   final void Function(int)? onButtonPress;
   final int score;
+  final List<ProgressStatus> progressLog;
+  final int current;
   const GameScreen({
     required this.title,
     required this.question,
     required this.resultData,
     required this.onButtonPress,
     required this.score,
+    required this.progressLog,
+    required this.current,
     super.key,
   });
 
@@ -113,10 +117,15 @@ class GameScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(.0),
+          padding: const EdgeInsets.all(12.0),
           child: SizedBox.expand(
+            // outer column: progressbar, button column, score
             child: Column(
               children: <Widget>[
+                ProgressBar(
+                  progressLog: progressLog,
+                  current: current,
+                ),
                 // inner column: buttons
                 Expanded(
                   child: Column(
@@ -147,26 +156,62 @@ class GameScreen extends StatelessWidget {
 
 class EndScreen extends StatelessWidget {
   final int score;
+  final int maxScore;
   final VoidCallback onReset;
   const EndScreen({
     required this.score,
+    required this.maxScore,
     required this.onReset,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme cs = Theme.of(context).colorScheme;
     return Scaffold(
       body: SafeArea(
         child: SizedBox.expand(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              EndText(text: "The quiz has ended.\nThank you for playing!"),
-              ScoreText(score: score),
-              PrimaryActionButton(text: "Restart", onPressed: onReset)
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Text(
+                  "The quiz has ended.\nThank you for playing!",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 21,
+                    color: cs.onSurface,
+                  ),
+                ),
+                Column(
+                  children: [
+                    Text(
+                      "Score: $score / $maxScore",
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: cs.onSurface,
+                      ),
+                    ),
+                    SizedBox(height: 24,),
+                    LinearProgressIndicator(
+                      value: score / maxScore,
+                      minHeight: 15,
+                      color: cs.primaryContainer,
+                      backgroundColor: cs.errorContainer,
+                      borderRadius: BorderRadius.circular(999),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    PrimaryActionButton(text: "Restart", onPressed: onReset),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
         ),
