@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:quiz_app/quiz.dart';
+import "package:quiz_app/screens.dart";
 
 void main() {
   runApp(const MyApp());
@@ -8,108 +9,8 @@ void main() {
 
 // used in HomePageState,
 // which handles the UI-size quiz logic
-enum QuizStatus { loading, idle, checking, showingResult, ended }
+enum QuizStatus { loading, title, idle, checking, showingResult, ended }
 
-class QuestionText extends StatelessWidget {
-  final String questionText;
-  const QuestionText({required this.questionText, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Theme.of(context).colorScheme.primaryContainer,
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Text(
-          questionText,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 18,
-            color: Theme.of(context).colorScheme.onPrimaryContainer,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class OptionButton extends StatelessWidget {
-  final String optionText;
-  final VoidCallback? onPressed;
-  final ButtonStyle? style;
-  const OptionButton({
-    required this.optionText,
-    required this.onPressed,
-    this.style,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 12.0),
-      child: TextButton(
-        onPressed: onPressed,
-        style: style ?? ButtonStyle(
-          backgroundColor: WidgetStatePropertyAll(
-            Theme.of(context).colorScheme.secondaryContainer,
-          ),
-          foregroundColor: WidgetStatePropertyAll(
-            Theme.of(context).colorScheme.onSecondaryContainer,
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Text(optionText, style: TextStyle(fontSize: 18)),
-        ),
-      ),
-    );
-  }
-}
-
-class EndText extends StatelessWidget {
-  final String text;
-  const EndText({required this.text, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Theme.of(context).colorScheme.primaryContainer,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(12, 36, 12, 36),
-        child: Text(
-          text,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 18,
-            color: Theme.of(context).colorScheme.onPrimaryContainer,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class ScoreText extends StatelessWidget {
-  final int score;
-  const ScoreText({required this.score, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final String text = "Score: $score";
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(12, 36, 12, 36),
-      child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: 18,
-          color: Theme.of(context).colorScheme.onSurface,
-        ),
-      ),
-    );
-  }
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -173,8 +74,12 @@ class _HomePageState extends State<HomePage> {
     currentQuestion = quizManager.getQuestion();
     if (!mounted) return;
     setState(() {
-      status = QuizStatus.idle;
+      status = QuizStatus.title;
     });
+  }
+
+  void _onStart() {
+    setState(() => status = QuizStatus.idle);
   }
 
   Future<void> onButtonPress(int i) async {
@@ -219,78 +124,40 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  List<Widget> _endMessage() {
-    return <Widget>[
-      EndText(text: "The quiz has ended.\nThank you for playing!"),
-      ScoreText(score: quizManager.score),
-    ];
-  }
-
-  List<Widget> _questionContent(q) {
-    return <Widget>[
-      QuestionText(questionText: q.question),
-      for (final entry in q.options.asMap().entries)
-        OptionButton(
-          optionText: entry.value,
-          onPressed: status == QuizStatus.idle
-              ? () => onButtonPress(entry.key)
-              : null,
-          style: _optionStyle(context, entry.key),
-        ),
-        ScoreText(score: quizManager.score),
-    ];
-  }
-
   List<Widget> _loadingSignal() {
     return <Widget>[SizedBox(height: 32), CircularProgressIndicator()];
   }
 
-ButtonStyle _optionStyle(BuildContext c, int i) {
-  final cs = Theme.of(c).colorScheme;
-  var bg = cs.secondaryContainer;
-  var fg = cs.onSecondaryContainer;
-
-  if (status == QuizStatus.showingResult) {
-    if (i == correctIndex) { bg = cs.tertiaryContainer; fg = cs.onTertiaryContainer; }
-    else if (i == wrongIndex) { bg = cs.errorContainer; fg = cs.onErrorContainer; }
-  }
-  return ButtonStyle(
-    backgroundColor: WidgetStatePropertyAll(bg),
-    foregroundColor: WidgetStatePropertyAll(fg),
-  );
-}
-
   @override
   Widget build(BuildContext context) {
     final q = currentQuestion;
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-        title: Text(widget.title),
-        foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+    return switch (status) {
+      QuizStatus.loading => TitleScreen(onStart: null),
+      QuizStatus.title => TitleScreen(onStart: _onStart),
+      QuizStatus.idle => GameScreen(
+        title: "Quiz",
+        question: currentQuestion!,
+        resultData: null,
+        onButtonPress: onButtonPress,
+        score: quizManager.score,
       ),
-      body: LayoutBuilder(
-        builder: (context, vp) {
-          final w = (vp.maxWidth * 0.8).clamp(0.0, 360.0);
-          return SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: vp.maxHeight),
-              child: Center(
-                child: SizedBox(
-                  width: w,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: status == QuizStatus.ended
-                        ? _endMessage()
-                        : (q != null ? _questionContent(q) : _loadingSignal()),
-                  ),
-                ),
-              ),
-            ),
-          );
-        },
+      QuizStatus.checking => GameScreen(
+        title: "Quiz",
+        question: currentQuestion!,
+        resultData: null,
+        onButtonPress: null,
+        score: quizManager.score,
       ),
-    );
+      QuizStatus.showingResult => GameScreen(
+        title: "Quiz",
+        question: currentQuestion!,
+        resultData: (correct: correctIndex!, selected: selectedIndex!),
+        onButtonPress: null,
+        score: quizManager.score,
+      ),
+      QuizStatus.ended => EndScreen(
+        score: quizManager.score,
+      )
+    };
   }
 }

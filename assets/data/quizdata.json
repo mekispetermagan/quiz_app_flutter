@@ -1,37 +1,698 @@
 [
-  { "q": "Where is the Eiffel tower?", "a": "Paris", "o": ["London", "Rome"] },
-  { "q": "Which of these is a kingdom?", "a": "The Netherlands", "o": ["Russia", "Hungary"] },
-  { "q": "What is the Danube?", "a": "A river", "o": ["A mountain", "A lake"] },
-  { "q": "Norway, Sweden, Finland: these are...", "a": "Nordic countries", "o": ["Baltic countries", "Balkanic countries"] },
-  { "q": "What is the London Eye?", "a": "A ferris wheel", "o": ["A stadium", "A museum"] },
-  { "q": "What is the capital of Poland?", "a": "Warsaw", "o": ["Belgrade", "Madrid"] },
-  { "q": "Which of these is NOT a European country?", "a": "Nicaragua", "o": ["Bulgaria", "Portugal"] },
-  { "q": "What is the capital of the United Kingdom?", "a": "London", "o": ["Manchester", "Edinburgh"] },
-  { "q": "Which European country is famous for pizza and pasta?", "a": "Italy", "o": ["Germany", "Sweden"] },
-  { "q": "The Colosseum is a famous old stadium in which city?", "a": "Rome", "o": ["Athens", "Vienna"] },
-  { "q": "Which ocean is to the west of Europe?", "a": "Atlantic Ocean", "o": ["Indian Ocean", "Pacific Ocean"] },
-  { "q": "Which continent is directly north of Africa?", "a": "Europe", "o": ["Asia", "South America"] },
-  { "q": "Which European country is famous for tulips and windmills?", "a": "The Netherlands", "o": ["Norway", "Greece"] },
-  { "q": "Which money is used in many European Union countries?", "a": "Euro", "o": ["US dollar", "British pound"] },
-  { "q": "Which of these cities is in Germany?", "a": "Berlin", "o": ["Dublin", "Cairo"] },
-  { "q": "FC Barcelona is a football club from which country?", "a": "Spain", "o": ["Poland", "Switzerland"] },
-  { "q": "Istanbul is a big city in which country, partly in Europe and partly in Asia?", "a": "Turkey", "o": ["Ireland", "Denmark"] },
-  { "q": "Which European country is famous for chocolate and watches?", "a": "Switzerland", "o": ["Portugal", "Ukraine"] },
-  { "q": "Which Italian city is famous for canals and gondola boats?", "a": "Venice", "o": ["Milan", "Prague"] },
-  { "q": "The Acropolis and many ancient temples are found in which country?", "a": "Greece", "o": ["Finland", "Belgium"] },
-  { "q": "Which sea lies between Europe and North Africa?", "a": "Mediterranean Sea", "o": ["Black Sea", "Red Sea"] },
-  { "q": "Which country is famous for waffles and has Brussels as its capital?", "a": "Belgium", "o": ["Iceland", "Serbia"] },
-  { "q": "Which European country is famous for deep sea inlets called fjords and has Oslo as its capital?", "a": "Norway", "o": ["Albania", "Belarus"] },
-  { "q": "Big Ben is a famous clock tower in which city?", "a": "London", "o": ["Paris", "Moscow"] },
-  { "q": "Cristiano Ronaldo is a famous football player from which country?", "a": "Portugal", "o": ["Sweden", "Czech Republic"] },
-  { "q": "Which country is often linked with Vikings together with Norway and Denmark?", "a": "Sweden", "o": ["Austria", "Romania"] },
-  { "q": "Which river flows through London?", "a": "River Thames", "o": ["River Nile", "River Amazon"] },
-  { "q": "Which European city is often called the 'city of love'?", "a": "Paris", "o": ["Lisbon", "Moscow"] },
-  { "q": "Which wall separated East and West Berlin during the Cold War?", "a": "The Berlin Wall", "o": ["The Great Wall of China", "Hadrian's Wall"] },
-  { "q": "Which European mountain range includes Mont Blanc between France and Italy?", "a": "The Alps", "o": ["The Himalayas", "The Andes"] },
-  { "q": "In which country did the movie 'Roman Holiday' take place?", "a": "Italy", "o": ["Serbia", "Finland"] },
-  { "q": "Where is Malta?", "a": "In Southern Europe", "o": ["In Central Europe", "In Eastern Europe"] },
-  { "q": "Which country is in war against the Russians?", "a": "Ukraine", "o": ["Belarus", "Estonia"] },
-  { "q": "Which country did Patience spend her internship?", "a": "Denmark", "o": ["Luxemburg", "Belgium"] },
-  { "q": "Which country started the Second World War?", "a": "Germany", "o": ["Hungary", "Ireland"] }
+  {
+    "t": "Europe",
+    "q": "Where is the Eiffel tower?",
+    "a": "Paris",
+    "o": ["London", "Rome"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which of these is a kingdom?",
+    "a": "The Netherlands",
+    "o": ["Russia", "Hungary"]
+  },
+  {
+    "t": "Europe",
+    "q": "What is the Danube?",
+    "a": "A river",
+    "o": ["A mountain", "A lake"]
+  },
+  {
+    "t": "Europe",
+    "q": "Norway, Sweden, Finland: these are...",
+    "a": "Nordic countries",
+    "o": ["Baltic countries", "Balkanic countries"]
+  },
+  {
+    "t": "Europe",
+    "q": "What is the London Eye?",
+    "a": "A ferris wheel",
+    "o": ["A stadium", "A museum"]
+  },
+  {
+    "t": "Europe",
+    "q": "What is the capital of Poland?",
+    "a": "Warsaw",
+    "o": ["Belgrade", "Madrid"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which of these is NOT a European country?",
+    "a": "Nicaragua",
+    "o": ["Bulgaria", "Portugal"]
+  },
+  {
+    "t": "Europe",
+    "q": "What is the capital of the United Kingdom?",
+    "a": "London",
+    "o": ["Manchester", "Edinburgh"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which European country is famous for pizza and pasta?",
+    "a": "Italy",
+    "o": ["Germany", "Sweden"]
+  },
+  {
+    "t": "Europe",
+    "q": "The Colosseum is a famous old stadium in which city?",
+    "a": "Rome",
+    "o": ["Athens", "Vienna"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which ocean is to the west of Europe?",
+    "a": "Atlantic Ocean",
+    "o": ["Indian Ocean", "Pacific Ocean"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which continent is directly north of Africa?",
+    "a": "Europe",
+    "o": ["Asia", "South America"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which European country is famous for tulips and windmills?",
+    "a": "The Netherlands",
+    "o": ["Norway", "Greece"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which money is used in many European Union countries?",
+    "a": "Euro",
+    "o": ["US dollar", "British pound"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which of these cities is in Germany?",
+    "a": "Berlin",
+    "o": ["Dublin", "Cairo"]
+  },
+  {
+    "t": "Europe",
+    "q": "FC Barcelona is a football club from which country?",
+    "a": "Spain",
+    "o": ["Poland", "Switzerland"]
+  },
+  {
+    "t": "Europe",
+    "q": "Istanbul is a big city in which country, partly in Europe and partly in Asia?",
+    "a": "Turkey",
+    "o": ["Ireland", "Denmark"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which European country is famous for chocolate and watches?",
+    "a": "Switzerland",
+    "o": ["Portugal", "Ukraine"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which Italian city is famous for canals and gondola boats?",
+    "a": "Venice",
+    "o": ["Milan", "Prague"]
+  },
+  {
+    "t": "Europe",
+    "q": "The Acropolis and many ancient temples are found in which country?",
+    "a": "Greece",
+    "o": ["Finland", "Belgium"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which sea lies between Europe and North Africa?",
+    "a": "Mediterranean Sea",
+    "o": ["Black Sea", "Red Sea"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which country is famous for waffles and has Brussels as its capital?",
+    "a": "Belgium",
+    "o": ["Iceland", "Serbia"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which European country is famous for deep sea inlets called fjords and has Oslo as its capital?",
+    "a": "Norway",
+    "o": ["Albania", "Belarus"]
+  },
+  {
+    "t": "Europe",
+    "q": "Big Ben is a famous clock tower in which city?",
+    "a": "London",
+    "o": ["Paris", "Moscow"]
+  },
+  {
+    "t": "Europe",
+    "q": "Cristiano Ronaldo is a famous football player from which country?",
+    "a": "Portugal",
+    "o": ["Sweden", "Czech Republic"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which country is often linked with Vikings together with Norway and Denmark?",
+    "a": "Sweden",
+    "o": ["Austria", "Romania"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which river flows through London?",
+    "a": "River Thames",
+    "o": ["River Nile", "River Amazon"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which European city is often called the 'city of love'?",
+    "a": "Paris",
+    "o": ["Lisbon", "Moscow"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which wall separated East and West Berlin during the Cold War?",
+    "a": "The Berlin Wall",
+    "o": ["The Great Wall of China", "Hadrian's Wall"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which European mountain range includes Mont Blanc between France and Italy?",
+    "a": "The Alps",
+    "o": ["The Himalayas", "The Andes"]
+  },
+  {
+    "t": "Europe",
+    "q": "In which country did the movie 'Roman Holiday' take place?",
+    "a": "Italy",
+    "o": ["Serbia", "Finland"]
+  },
+  {
+    "t": "Europe",
+    "q": "Where is Malta?",
+    "a": "In Southern Europe",
+    "o": ["In Central Europe", "In Eastern Europe"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which country is in war against the Russians?",
+    "a": "Ukraine",
+    "o": ["Belarus", "Estonia"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which country did Patience spend her internship?",
+    "a": "Denmark",
+    "o": ["Luxemburg", "Belgium"]
+  },
+  {
+    "t": "Europe",
+    "q": "Which country started the Second World War?",
+    "a": "Germany",
+    "o": ["Hungary", "Ireland"]
+  },
+
+
+  {
+    "t": "Uganda",
+    "q": "What is the capital city of Uganda?",
+    "a": "Kampala",
+    "o": ["Entebbe", "Jinja", "Mbarara"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which lake lies along Uganda's southern border and is Africa's largest lake?",
+    "a": "Lake Victoria",
+    "o": ["Lake Albert", "Lake Kyoga", "Lake Edward"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which big river flows out of Uganda from Lake Victoria?",
+    "a": "The Nile",
+    "o": ["The Congo", "The Zambezi", "The Niger"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which mountains on the border with the DRC are called the “Mountains of the Moon”?",
+    "a": "Rwenzori Mountains",
+    "o": ["Mount Elgon", "Virunga Mountains", "Kigezi Highlands"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which Ugandan national park is famous for tree-climbing lions?",
+    "a": "Queen Elizabeth National Park",
+    "o": ["Murchison Falls National Park", "Kidepo Valley National Park", "Lake Mburo National Park"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which animal is a national symbol and appears on Uganda's flag and coat of arms?",
+    "a": "Grey crowned crane",
+    "o": ["African fish eagle", "Ugandan kob", "Shoebill stork"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which large primates can you track in Bwindi Impenetrable National Park?",
+    "a": "Mountain gorillas",
+    "o": ["Chimpanzees", "Baboons", "Vervet monkeys"]
+  },
+  {
+    "t": "Uganda",
+    "q": "What is matooke, a very common Ugandan food?",
+    "a": "Steamed mashed green bananas",
+    "o": ["Spicy bean stew", "Roasted cassava", "Fried fish with chips"]
+  },
+  {
+    "t": "Uganda",
+    "q": "What is posho usually made from?",
+    "a": "Maize flour",
+    "o": ["Rice flour", "Cassava flour", "Wheat flour"]
+  },
+  {
+    "t": "Uganda",
+    "q": "What is a rolex in Ugandan street food?",
+    "a": "Eggs and vegetables rolled in a chapati",
+    "o": ["Deep-fried chicken", "Sweet banana pancake", "Spiced meat skewer"]
+  },
+  {
+    "t": "Uganda",
+    "q": "In Uganda, what is a boda-boda?",
+    "a": "A motorcycle taxi",
+    "o": ["A long-distance bus", "A village market", "A type of drum"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which side of the road do vehicles drive on in Uganda?",
+    "a": "Left side",
+    "o": ["Right side", "Middle of the road", "It changes by region"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which city in eastern Uganda is famous for the Source of the Nile and white-water rafting?",
+    "a": "Jinja",
+    "o": ["Gulu", "Fort Portal", "Mbale"]
+  },
+  {
+    "t": "Uganda",
+    "q": "What is the main language used in schools, government and national news in Uganda?",
+    "a": "English",
+    "o": ["Luganda", "Swahili", "French"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which local language is widely spoken around Kampala and central Uganda?",
+    "a": "Luganda",
+    "o": ["Runyankore", "Acholi", "Lusoga"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which Ugandan currency do people use to buy things?",
+    "a": "Ugandan shilling",
+    "o": ["Ugandan pound", "East African dollar", "Rwandan franc"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which crop is one of Uganda's major exports and is used to make a popular hot drink?",
+    "a": "Coffee",
+    "o": ["Cotton", "Tea", "Sugarcane"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which film about a Ugandan chess prodigy from Katwe became famous worldwide?",
+    "a": "Queen of Katwe",
+    "o": ["The Last King of Scotland", "Hotel Rwanda", "Lionheart"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which traditional Ugandan instrument is a long wooden xylophone played by several people at once?",
+    "a": "Amadinda",
+    "o": ["Adungu", "Engoma", "Akogo"]
+  },
+  {
+    "t": "Uganda",
+    "q": "What is the name of the large waterfall where the Nile squeezes through a narrow gap in northern Uganda?",
+    "a": "Murchison Falls",
+    "o": ["Sipi Falls", "Itanda Falls", "Karuma Falls"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which national park in northeastern Uganda is known for lions, cheetahs and wide open savannah?",
+    "a": "Kidepo Valley National Park",
+    "o": ["Lake Mburo National Park", "Semuliki National Park", "Mgahinga Gorilla National Park"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which large bird with a huge shoe-shaped bill can be found in some Ugandan wetlands?",
+    "a": "Shoebill",
+    "o": ["Flamingo", "Pelican", "Ostrich"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which freshwater lake inside Uganda is known for its many papyrus swamps and islands?",
+    "a": "Lake Kyoga",
+    "o": ["Lake Tanganyika", "Lake Turkana", "Lake Malawi"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which mountain on the Uganda-Kenya border is an extinct volcano and a popular hiking area?",
+    "a": "Mount Elgon",
+    "o": ["Mount Kilimanjaro", "Mount Kenya", "Mount Meru"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which Ugandan staple food is made from dried cassava or millet and eaten with sauce or beans?",
+    "a": "Kalo (posho from cassava or millet)",
+    "o": ["Mandazi", "Chapati", "Samosa"]
+  },
+  {
+    "t": "Uganda",
+    "q": "In many Ugandan homes, what do children often use for long-distance messaging instead of letters?",
+    "a": "Mobile phones",
+    "o": ["Carrier pigeons", "Walkie-talkies", "Paper airplanes"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which animal is a common type of livestock in many Ugandan villages and also appears on the coat of arms?",
+    "a": "Ankole long-horned cow",
+    "o": ["Camel", "Yak", "Reindeer"]
+  },
+  {
+    "t": "Uganda",
+    "q": "What is the nickname often used for Uganda because of its green hills and rich nature?",
+    "a": "The Pearl of Africa",
+    "o": ["The Heart of Africa", "The Roof of Africa", "The Garden of Africa"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which common Ugandan snack is made from deep-fried dough and often eaten for breakfast or tea?",
+    "a": "Mandazi",
+    "o": ["Samosa", "Chapati", "Popcorn"]
+  },
+  {
+    "t": "Uganda",
+    "q": "Which body of water forms part of Uganda's western border with the Democratic Republic of the Congo?",
+    "a": "Lake Albert",
+    "o": ["Lake Tanganyika", "Lake Kivu", "Lake Tana"]
+  },
+
+
+  {
+    "t": "computers",
+    "q": "What is WhatsApp?",
+    "a": "A messaging app",
+    "o": ["A mobile phone brand", "An American hacker group"]
+  },
+  {
+    "t": "computers",
+    "q": "What is Scratch?",
+    "a": "A programming language for kids",
+    "o": ["An app for DJs", "A type of mouse"]
+  },
+  {
+    "t": "computers",
+    "q": "What is the main use of a computer mouse?",
+    "a": "To move the pointer and click on things",
+    "o": ["To cool the computer", "To make sound louder"]
+  },
+  {
+    "t": "computers",
+    "q": "What is the CPU often called?",
+    "a": "The brain of the computer",
+    "o": ["The feet of the computer", "The battery of the computer"]
+  },
+  {
+    "t": "computers",
+    "q": "A file that ends with .jpg is usually what?",
+    "a": "A picture",
+    "o": ["A song", "A game"]
+  },
+  {
+    "t": "computers",
+    "q": "What is a password?",
+    "a": "A secret word or code to protect your account",
+    "o": ["A funny nickname", "A type of computer virus"]
+  },
+  {
+    "t": "computers",
+    "q": "What is the internet?",
+    "a": "A global network that connects many computers",
+    "o": ["A single big computer in a room", "A kind of phone charger"]
+  },
+  {
+    "t": "computers",
+    "q": "Which of these is a search engine?",
+    "a": "Google",
+    "o": ["WhatsApp", "Instagram"]
+  },
+  {
+    "t": "computers",
+    "q": "What should you do with your passwords?",
+    "a": "Keep them secret and safe",
+    "o": ["Share them with friends", "Post them on social media"]
+  },
+  {
+    "t": "computers",
+    "q": "What is a computer virus?",
+    "a": "Bad software that can harm a computer",
+    "o": ["A game you can download", "A cleaning program for your phone"]
+  },
+  {
+    "t": "computers",
+    "q": "What is a robot?",
+    "a": "A machine that can be programmed to do tasks",
+    "o": ["A type of earphone", "A kind of phone network"]
+  },
+  {
+    "t": "computers",
+    "q": "What is coding?",
+    "a": "Writing instructions for a computer",
+    "o": ["Fixing broken screens", "Cleaning keyboards"]
+  },
+  {
+    "t": "computers",
+    "q": "Which device is best for taking digital photos?",
+    "a": "A smartphone",
+    "o": ["A printer", "A speaker"]
+  },
+  {
+    "t": "computers",
+    "q": "What is mobile money mainly used for?",
+    "a": "Sending and receiving money with your phone",
+    "o": ["Charging your battery", "Cleaning your screen"]
+  },
+  {
+    "t": "computers",
+    "q": "What is an app?",
+    "a": "A program you can run on a phone or computer",
+    "o": ["A pair of earphones", "A paper notebook"]
+  },
+  {
+    "t": "computers",
+    "q": "What does Wi-Fi allow you to do?",
+    "a": "Connect to the internet without cables",
+    "o": ["Charge your phone without cables", "Remove viruses from your phone"]
+  },
+  {
+    "t": "computers",
+    "q": "Which is good digital behavior?",
+    "a": "Being kind and respectful online",
+    "o": ["Insulting others in comments", "Sharing strangers' photos without asking"]
+  },
+  {
+    "t": "computers",
+    "q": "What does a strong password usually look like?",
+    "a": "A mix of letters, numbers and symbols",
+    "o": ["123456", "Only your first name"]
+  },
+  {
+    "t": "computers",
+    "q": "Why should you log out from a shared computer at school or in a café?",
+    "a": "So other people cannot use your account",
+    "o": ["To make the internet faster", "To save your phone battery"]
+  },
+  {
+    "t": "computers",
+    "q": "What is cloud storage?",
+    "a": "Saving your files on internet servers so you can reach them anywhere",
+    "o": ["Saving files only on a flash disk", "A weather app that shows clouds"]
+  },
+
+
+  {
+    "t": "nature",
+    "q": "What is the Sun?",
+    "a": "One of millions of stars in the universe",
+    "o": ["A hole in the sky", "A goddess that walks through the sky every day", "The center of the universe"]
+  },
+  {
+    "t": "nature",
+    "q": "Asia, Africa, Australia: these are...",
+    "a": "Continents",
+    "o": ["Countries", "Mountains", "Islands"]
+  },
+  {
+    "t": "nature",
+    "q": "The Himalayas, The Alps, The Andes: these are...",
+    "a": "Mountain ranges",
+    "o": ["Tropical diseases", "Lakes", "Fish species"]
+  },
+  {
+    "t": "nature",
+    "q": "Which of these is NOT a planet?",
+    "a": "The Moon",
+    "o": ["Jupiter", "Mars", "Venus"]
+  },
+  {
+    "t": "nature",
+    "q": "Dolphins are...",
+    "a": "Mammals",
+    "o": ["Fish", "Reptiles", "Amphibians"]
+  },
+  {
+    "t": "nature",
+    "q": "Who DOESN'T lay eggs?",
+    "a": "A kangaroo",
+    "o": ["A tortoise", "An albatross", "A Komodo dragon"]
+  },
+  {
+    "t": "nature",
+    "q": "Which of these animals exist in reality??",
+    "a": "Komodo dragon",
+    "o": ["Unicorn", "Godzilla", "Pikachu"]
+  },
+  {
+    "t": "nature",
+    "q": "Which of these countries is the home of panda bears?",
+    "a": "China",
+    "o": ["Brazil", "New Zealand", "Egypt"]
+  },
+  {
+    "t": "nature",
+    "q": "Which animal spreads malaria?",
+    "a": "The Anopheles mosquito",
+    "o": ["The common raven", "The praying mantis", "The African Monarch Butterfly"]
+  },
+  {
+    "t": "nature",
+    "q": "What gas do green plants mainly use from the air to make their own food?",
+    "a": "Carbon dioxide",
+    "o": ["Oxygen", "Nitrogen", "Hydrogen"]
+  },
+  {
+    "t": "nature",
+    "q": "What gas do green plants release that people and animals need to breathe?",
+    "a": "Oxygen",
+    "o": ["Carbon dioxide", "Helium", "Smoke"]
+  },
+  {
+    "t": "nature",
+    "q": "Which part of a plant usually grows underground and takes in water?",
+    "a": "Roots",
+    "o": ["Leaves", "Flowers", "Stems"]
+  },
+  {
+    "t": "nature",
+    "q": "Which organ in your body pumps blood around your body?",
+    "a": "The heart",
+    "o": ["The lungs", "The stomach", "The brain"]
+  },
+  {
+    "t": "nature",
+    "q": "Which of these animals is a reptile?",
+    "a": "Crocodile",
+    "o": ["Cow", "Eagle", "Frog"]
+  },
+  {
+    "t": "nature",
+    "q": "Which of these is a renewable source of energy?",
+    "a": "Sunlight (solar energy)",
+    "o": ["Coal", "Petrol", "Natural gas"]
+  },
+  {
+    "t": "nature",
+    "q": "What do we call a long period of time with very little or no rain?",
+    "a": "Drought",
+    "o": ["Flood", "Earthquake", "Storm"]
+  },
+  {
+    "t": "nature",
+    "q": "When do rainbows most often appear?",
+    "a": "When sun shines through raindrops after or during rain",
+    "o": ["Only at night when it is dark", "When there are no clouds at all", "Only during an earthquake"]
+  },
+  {
+    "t": "nature",
+    "q": "In which direction does the Sun appear to rise in the morning?",
+    "a": "East",
+    "o": ["West", "North", "South"]
+  },
+  {
+    "t": "nature",
+    "q": "What is the name of the imaginary line that circles Earth halfway between the North and South Poles?",
+    "a": "The equator",
+    "o": ["The horizon", "The Greenwich line", "The tropic"]
+  },
+  {
+    "t": "nature",
+    "q": "What do we call the layer of gases that surrounds Earth?",
+    "a": "The atmosphere",
+    "o": ["The biosphere", "The hemisphere", "The hydrosphere"]
+  },
+  {
+    "t": "nature",
+    "q": "Which of these animals is an insect?",
+    "a": "Ant",
+    "o": ["Spider", "Snail", "Worm"]
+  },
+  {
+    "t": "nature",
+    "q": "Animals that eat only plants are called...",
+    "a": "Herbivores",
+    "o": ["Carnivores", "Omnivores", "Predators"]
+  },
+  {
+    "t": "nature",
+    "q": "Which of these is a freshwater habitat?",
+    "a": "River",
+    "o": ["Ocean", "Sea", "Coral reef"]
+  },
+  {
+    "t": "nature",
+    "q": "A savanna is best described as...",
+    "a": "Grassland with scattered trees",
+    "o": ["Thick snowy forest", "Dry sand desert", "Frozen ice field"]
+  },
+  {
+    "t": "nature",
+    "q": "Which type of place usually has very little rain and lots of sand?",
+    "a": "Desert",
+    "o": ["Rainforest", "Swamp", "Glacier"]
+  },
+  {
+    "t": "nature",
+    "q": "Which type of forest is hot, wet and has many tall trees and animals?",
+    "a": "Rainforest",
+    "o": ["Taiga", "Mangrove", "Tundra"]
+  },
+  {
+    "t": "nature",
+    "q": "What is the climate like in polar regions near the North and South Poles?",
+    "a": "Very cold with ice and snow",
+    "o": ["Very hot and dry all year", "Always warm and rainy", "Mild with no wind"]
+  },
+  {
+    "t": "nature",
+    "q": "What is a volcano?",
+    "a": "A mountain that can erupt with lava, ash and gases",
+    "o": ["A deep ocean trench", "A frozen waterfall", "A big cave under a hill"]
+  },
+  {
+    "t": "nature",
+    "q": "What mainly causes the regular rise and fall of sea level called tides?",
+    "a": "The pull of the Moon’s gravity",
+    "o": ["Waves made by ships", "Wind only", "Fish swimming in the sea"]
+  },
+  {
+    "t": "nature",
+    "q": "What is the water cycle?",
+    "a": "Water evaporating, forming clouds and falling again as rain",
+    "o": ["Only rivers flowing into the sea", "Only ice melting on mountains", "Waves moving on the ocean surface"]
+  }
 ]
