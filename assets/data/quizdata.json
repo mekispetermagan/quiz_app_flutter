@@ -394,121 +394,121 @@
 
 
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What is WhatsApp?",
     "a": "A messaging app",
     "o": ["A mobile phone brand", "An American hacker group"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What is Scratch?",
     "a": "A programming language for kids",
     "o": ["An app for DJs", "A type of mouse"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What is the main use of a computer mouse?",
     "a": "To move the pointer and click on things",
     "o": ["To cool the computer", "To make sound louder"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What is the CPU often called?",
     "a": "The brain of the computer",
     "o": ["The feet of the computer", "The battery of the computer"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "A file that ends with .jpg is usually what?",
     "a": "A picture",
     "o": ["A song", "A game"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What is a password?",
     "a": "A secret word or code to protect your account",
     "o": ["A funny nickname", "A type of computer virus"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What is the internet?",
     "a": "A global network that connects many computers",
     "o": ["A single big computer in a room", "A kind of phone charger"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "Which of these is a search engine?",
     "a": "Google",
     "o": ["WhatsApp", "Instagram"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What should you do with your passwords?",
     "a": "Keep them secret and safe",
     "o": ["Share them with friends", "Post them on social media"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What is a computer virus?",
     "a": "Bad software that can harm a computer",
     "o": ["A game you can download", "A cleaning program for your phone"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What is a robot?",
     "a": "A machine that can be programmed to do tasks",
     "o": ["A type of earphone", "A kind of phone network"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What is coding?",
     "a": "Writing instructions for a computer",
     "o": ["Fixing broken screens", "Cleaning keyboards"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "Which device is best for taking digital photos?",
     "a": "A smartphone",
     "o": ["A printer", "A speaker"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What is mobile money mainly used for?",
     "a": "Sending and receiving money with your phone",
     "o": ["Charging your battery", "Cleaning your screen"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What is an app?",
     "a": "A program you can run on a phone or computer",
     "o": ["A pair of earphones", "A paper notebook"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What does Wi-Fi allow you to do?",
     "a": "Connect to the internet without cables",
     "o": ["Charge your phone without cables", "Remove viruses from your phone"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "Which is good digital behavior?",
     "a": "Being kind and respectful online",
     "o": ["Insulting others in comments", "Sharing strangers' photos without asking"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What does a strong password usually look like?",
     "a": "A mix of letters, numbers and symbols",
     "o": ["123456", "Only your first name"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "Why should you log out from a shared computer at school or in a café?",
     "a": "So other people cannot use your account",
     "o": ["To make the internet faster", "To save your phone battery"]
   },
   {
-    "t": "computers",
+    "t": "Computers",
     "q": "What is cloud storage?",
     "a": "Saving your files on internet servers so you can reach them anywhere",
     "o": ["Saving files only on a flash disk", "A weather app that shows clouds"]
@@ -516,181 +516,181 @@
 
 
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "What is the Sun?",
     "a": "One of millions of stars in the universe",
     "o": ["A hole in the sky", "A goddess that walks through the sky every day", "The center of the universe"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Asia, Africa, Australia: these are...",
     "a": "Continents",
     "o": ["Countries", "Mountains", "Islands"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "The Himalayas, The Alps, The Andes: these are...",
     "a": "Mountain ranges",
     "o": ["Tropical diseases", "Lakes", "Fish species"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Which of these is NOT a planet?",
     "a": "The Moon",
     "o": ["Jupiter", "Mars", "Venus"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Dolphins are...",
     "a": "Mammals",
     "o": ["Fish", "Reptiles", "Amphibians"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Who DOESN'T lay eggs?",
     "a": "A kangaroo",
     "o": ["A tortoise", "An albatross", "A Komodo dragon"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Which of these animals exist in reality??",
     "a": "Komodo dragon",
     "o": ["Unicorn", "Godzilla", "Pikachu"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Which of these countries is the home of panda bears?",
     "a": "China",
     "o": ["Brazil", "New Zealand", "Egypt"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Which animal spreads malaria?",
     "a": "The Anopheles mosquito",
     "o": ["The common raven", "The praying mantis", "The African Monarch Butterfly"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "What gas do green plants mainly use from the air to make their own food?",
     "a": "Carbon dioxide",
     "o": ["Oxygen", "Nitrogen", "Hydrogen"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "What gas do green plants release that people and animals need to breathe?",
     "a": "Oxygen",
     "o": ["Carbon dioxide", "Helium", "Smoke"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Which part of a plant usually grows underground and takes in water?",
     "a": "Roots",
     "o": ["Leaves", "Flowers", "Stems"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Which organ in your body pumps blood around your body?",
     "a": "The heart",
     "o": ["The lungs", "The stomach", "The brain"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Which of these animals is a reptile?",
     "a": "Crocodile",
     "o": ["Cow", "Eagle", "Frog"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Which of these is a renewable source of energy?",
     "a": "Sunlight (solar energy)",
     "o": ["Coal", "Petrol", "Natural gas"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "What do we call a long period of time with very little or no rain?",
     "a": "Drought",
     "o": ["Flood", "Earthquake", "Storm"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "When do rainbows most often appear?",
     "a": "When sun shines through raindrops after or during rain",
     "o": ["Only at night when it is dark", "When there are no clouds at all", "Only during an earthquake"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "In which direction does the Sun appear to rise in the morning?",
     "a": "East",
     "o": ["West", "North", "South"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "What is the name of the imaginary line that circles Earth halfway between the North and South Poles?",
     "a": "The equator",
     "o": ["The horizon", "The Greenwich line", "The tropic"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "What do we call the layer of gases that surrounds Earth?",
     "a": "The atmosphere",
     "o": ["The biosphere", "The hemisphere", "The hydrosphere"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Which of these animals is an insect?",
     "a": "Ant",
     "o": ["Spider", "Snail", "Worm"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Animals that eat only plants are called...",
     "a": "Herbivores",
     "o": ["Carnivores", "Omnivores", "Predators"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Which of these is a freshwater habitat?",
     "a": "River",
     "o": ["Ocean", "Sea", "Coral reef"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "A savanna is best described as...",
     "a": "Grassland with scattered trees",
     "o": ["Thick snowy forest", "Dry sand desert", "Frozen ice field"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Which type of place usually has very little rain and lots of sand?",
     "a": "Desert",
     "o": ["Rainforest", "Swamp", "Glacier"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "Which type of forest is hot, wet and has many tall trees and animals?",
     "a": "Rainforest",
     "o": ["Taiga", "Mangrove", "Tundra"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "What is the climate like in polar regions near the North and South Poles?",
     "a": "Very cold with ice and snow",
     "o": ["Very hot and dry all year", "Always warm and rainy", "Mild with no wind"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "What is a volcano?",
     "a": "A mountain that can erupt with lava, ash and gases",
     "o": ["A deep ocean trench", "A frozen waterfall", "A big cave under a hill"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "What mainly causes the regular rise and fall of sea level called tides?",
-    "a": "The pull of the Moon’s gravity",
+    "a": "The pull of the Moon's gravity",
     "o": ["Waves made by ships", "Wind only", "Fish swimming in the sea"]
   },
   {
-    "t": "nature",
+    "t": "Nature",
     "q": "What is the water cycle?",
     "a": "Water evaporating, forming clouds and falling again as rain",
     "o": ["Only rivers flowing into the sea", "Only ice melting on mountains", "Waves moving on the ocean surface"]

@@ -3,17 +3,12 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:quiz_app/quiz.dart';
 import "package:quiz_app/screens.dart";
 
-void main() {
-  runApp(const MyApp());
-}
-
 // used in HomePageState,
 // which handles the UI-size quiz logic
-enum QuizStatus { loading, title, idle, checking, showingResult, ended }
+enum QuizStatus { loading, title, topic, idle, checking, showingResult, ended }
 
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class QuizApp extends StatelessWidget {
+  const QuizApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +35,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late QuizManager quizManager;
-  ShuffledQuestion? currentQuestion;
-  int? correctIndex;
-  int? selectedIndex;
-  int? wrongIndex;
+  late QuizManager _quizManager;
+  ShuffledQuestion? _currentQuestion;
+  int? _correctIndex;
+  int? _selectedIndex;
+  int? _wrongIndex;
   QuizStatus status = QuizStatus.loading;
   late final AudioPlayer _correct = AudioPlayer()
     ..setReleaseMode(ReleaseMode.stop);
@@ -70,8 +65,9 @@ class _HomePageState extends State<HomePage> {
   Future<void> _load() async {
     if (!mounted) return;
     List<StoredQuestion> data = await loadQuizDataAsset('assets/data/quizdata.json');
-    quizManager = QuizManager(rawQuizData: data);
-    currentQuestion = quizManager.getQuestion();
+    _quizManager = QuizManager(
+      quizData: data,
+    );
     if (!mounted) return;
     setState(() {
       status = QuizStatus.title;
@@ -79,34 +75,46 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _onStart() {
-    setState(() => status = QuizStatus.idle);
+    setState(() => status = QuizStatus.topic);
   }
 
-  Future<void> onButtonPress(int i) async {
+  void _onTopicSelect(String topic) {
+    setState((){
+      _quizManager.resetWith(
+        topic: topic,
+        length: 20,
+      );
+      _quizManager.generateQuestion();
+      _currentQuestion = _quizManager.currentQuestion;
+      status = QuizStatus.idle;
+    });
+  }
+
+  Future<void> _onSubmit(int i) async {
     if (!mounted) return;
     if (status != QuizStatus.idle) return;
     setState(() {
       status = QuizStatus.checking;
-      selectedIndex = i;
+      _selectedIndex = i;
     });
-    final GuessResult result = quizManager.checkGuess(i);
+    final GuessResult result = _quizManager.checkGuess(i);
     await _feedback(result);
   }
 
   Future<void> _feedback(GuessResult result) async {
     if (!mounted) return;
-    final sel = selectedIndex;
+    final sel = _selectedIndex;
     setState(() => status = QuizStatus.showingResult);
 
     switch (result) {
       case Correct():
-        setState(() => correctIndex = sel);
+        setState(() => _correctIndex = sel);
         await _correct.stop();
         await _correct.play(AssetSource('audio/correct.mp3'));
       case Incorrect(correctIndex: final i):
         setState(() {
-          correctIndex = i;
-          wrongIndex = sel;
+          _correctIndex = i;
+          _wrongIndex = sel;
         });
         await _wrong.stop();
         await _wrong.play(AssetSource('audio/wrong.mp3'));
@@ -115,49 +123,54 @@ class _HomePageState extends State<HomePage> {
     await Future.delayed(const Duration(milliseconds: 500));
     if (!mounted) return;
     setState(() {
-      correctIndex = null;
-      selectedIndex = null;
-      wrongIndex = null;
-      currentQuestion = quizManager.getQuestion();
-      if (currentQuestion != null) {status = QuizStatus.idle;} else {status = QuizStatus.ended;
+      _correctIndex = null;
+      _selectedIndex = null;
+      _wrongIndex = null;
+      _quizManager.generateQuestion();
+      _currentQuestion = _quizManager.currentQuestion;
+      if (_currentQuestion != null) {status = QuizStatus.idle;} else {status = QuizStatus.ended;
       _fanfare.play(AssetSource('audio/fanfare.mp3'));}
     });
   }
 
-  List<Widget> _loadingSignal() {
-    return <Widget>[SizedBox(height: 32), CircularProgressIndicator()];
-  }
-
   @override
   Widget build(BuildContext context) {
-    final q = currentQuestion;
     return switch (status) {
       QuizStatus.loading => TitleScreen(onStart: null),
       QuizStatus.title => TitleScreen(onStart: _onStart),
+      QuizStatus.topic => TopicScreen(
+        topics: _quizManager.allTopics,
+        onTopicSelect: _onTopicSelect,
+      ),
       QuizStatus.idle => GameScreen(
-        title: "Quiz",
-        question: currentQuestion!,
+        title: "${_quizManager.topic ??""} Quiz",
+        question: _currentQuestion!,
         resultData: null,
-        onButtonPress: onButtonPress,
-        score: quizManager.score,
+        onButtonPress: _onSubmit,
+        score: _quizManager.score,
       ),
       QuizStatus.checking => GameScreen(
-        title: "Quiz",
-        question: currentQuestion!,
+        title: "${_quizManager.topic ??""} Quiz",
+        question: _currentQuestion!,
         resultData: null,
         onButtonPress: null,
-        score: quizManager.score,
+        score: _quizManager.score,
       ),
       QuizStatus.showingResult => GameScreen(
-        title: "Quiz",
-        question: currentQuestion!,
-        resultData: (correct: correctIndex!, selected: selectedIndex!),
+        title: "${_quizManager.topic ??""} Quiz",
+        question: _currentQuestion!,
+        resultData: (correct: _correctIndex!, selected: _selectedIndex!),
         onButtonPress: null,
-        score: quizManager.score,
+        score: _quizManager.score,
       ),
       QuizStatus.ended => EndScreen(
-        score: quizManager.score,
+        score: _quizManager.score,
+        onReset: _onStart,
       )
     };
   }
+}
+
+void main() {
+  runApp(const QuizApp());
 }

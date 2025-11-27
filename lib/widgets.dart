@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quiz.dart';
 
 class QuestionText extends StatelessWidget {
   final String questionText;
@@ -130,5 +131,19 @@ class PrimaryActionButton extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class ProgressBarSegment extends StatelessWidget {
+  final ProgressLogStatus status;
+  const ProgressBarSegment({
+    required this.status,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
   }
 }

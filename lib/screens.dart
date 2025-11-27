@@ -17,6 +17,8 @@ class TitleScreen extends StatelessWidget {
       body: SafeArea(
         child: SizedBox.expand(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
                 "Quiz App",
@@ -29,6 +31,37 @@ class TitleScreen extends StatelessWidget {
                 text: onStart != null ? "Start" : "Wait...",
                 onPressed: onStart,
               ),
+            ],
+          ),
+        ),
+        ),
+    );
+  }
+}
+
+class TopicScreen extends StatelessWidget {
+  final Set<String> topics;
+  final void Function(String) onTopicSelect;
+  const TopicScreen({
+    required this.topics,
+    required this.onTopicSelect,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: SizedBox.expand(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              for (final topic in topics)
+              PrimaryActionButton(
+                text: topic,
+                onPressed: () => onTopicSelect(topic),
+              )
             ],
           ),
         ),
@@ -78,15 +111,14 @@ class GameScreen extends StatelessWidget {
         title: Text(title),
         foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
       ),
-      body: LayoutBuilder(
-        builder: (context, vp) {
-          final w = (vp.maxWidth * 0.8).clamp(0.0, 360.0);
-          return SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: vp.maxHeight),
-              child: Center(
-                child: SizedBox(
-                  width: w,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(.0),
+          child: SizedBox.expand(
+            child: Column(
+              children: <Widget>[
+                // inner column: buttons
+                Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -100,14 +132,14 @@ class GameScreen extends StatelessWidget {
                               : null,
                           style: optionStyle(entry.key),
                         ),
-                        ScoreText(score: score),
                     ],
                   ),
                 ),
-              ),
+                ScoreText(score: score),
+              ],
             ),
-          );
-        },
+          ),
+        ),
       ),
     );
   }
@@ -115,8 +147,10 @@ class GameScreen extends StatelessWidget {
 
 class EndScreen extends StatelessWidget {
   final int score;
+  final VoidCallback onReset;
   const EndScreen({
     required this.score,
+    required this.onReset,
     super.key,
   });
 
@@ -126,9 +160,12 @@ class EndScreen extends StatelessWidget {
       body: SafeArea(
         child: SizedBox.expand(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               EndText(text: "The quiz has ended.\nThank you for playing!"),
               ScoreText(score: score),
+              PrimaryActionButton(text: "Restart", onPressed: onReset)
             ],
           ),
         ),
