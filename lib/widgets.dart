@@ -159,7 +159,7 @@ class ProgressBarSegment extends StatelessWidget {
           : EdgeInsets.all(1.0),
         child: AnimatedContainer(
           duration: Duration(milliseconds: 200),
-          height: isCurrent ? 18 : 15,
+          height: 15,
           decoration: BoxDecoration(
             color: switch(status) {
               ProgressStatus.unSolved => cs.surface,
@@ -167,7 +167,7 @@ class ProgressBarSegment extends StatelessWidget {
               ProgressStatus.wrong => cs.errorContainer
             },
             border: Border.all(
-              color: cs.outlineVariant,
+              color: isCurrent ? cs.onSurface : cs.outlineVariant,
               width: 1,
             ),
             borderRadius: switch (whichEdge) {

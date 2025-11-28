@@ -144,7 +144,17 @@ class GameScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                ScoreText(score: score),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text(
+                    "Score: $score / $current",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
